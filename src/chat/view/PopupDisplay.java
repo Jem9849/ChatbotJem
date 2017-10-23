@@ -10,7 +10,7 @@ public class PopupDisplay
 	
 	public PopupDisplay()
 	{
-		icon = new ImageIcon(getClass().getResource("images/chatbot.png"));
+		icon = new ImageIcon(getClass().getResource("images/Chatbot.png"));
 		windowTitle = "Chatbot says";
 	}
 	public void displayText(String message)
