@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Chatbot
 {
-	private List<Movie> movieList;
+	private List<String> movieList;
 	private List<String> shoppingList;
 	private List<String> cuteAnimalMemes;
 	private String [] verbs;
@@ -18,10 +18,10 @@ public class Chatbot
 	private String intro;
 	private LocalTime currentTime;
 	
-	public Chatbot(String username)
+	public Chatbot(String username, List movieList, List shoppingList)
 	{
-		this.movieList = null;
-		this.shoppingList = null;
+		this.movieList = new ArrayList<String>();
+		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = null;
 		this.currentTime = null;
 		this.questions = null;
@@ -30,8 +30,19 @@ public class Chatbot
 		this.intro = null;
 		this.currentTime = null;
 		this.topics = null;
-		this.verbs = null;
+		this.verbs = new String [4];
 		this.followUps = null;
+		
+		buildVerbs();
+		buildShoppingList();
+	}
+	
+	private void buildVerbs()
+	{
+		verbs[0] = "LOVE";
+		verbs[1] = "HATE";
+		verbs[2] = "am detestant of";
+		verbs[3] = "am thinking about";
 	}
 
 	private void buildMovieList()
@@ -41,7 +52,16 @@ public class Chatbot
 	
 	private void buildShoppingList()
 	{
-		
+		shoppingList.add("snacks");
+		shoppingList.add("veggies");
+		shoppingList.add("protein");
+		shoppingList.add("slug bait");
+		shoppingList.add("gross things");
+		shoppingList.add("drugs");
+		shoppingList.add("hippoes(protein)");
+		shoppingList.add("drinks");
+		shoppingList.add("TOMOTTOES");
+		shoppingList.add("A fistful of knowledge");
 	}
 	
 	private void buildCuteAnimals()
@@ -99,7 +119,15 @@ public class Chatbot
 	
 	public boolean shoppingListChecker(String shoppingItem)
 	{
-		return false;
+		boolean goodShop = true; 
+		
+		for (String current : shoppingList)
+		{
+			if (shoppingList[])
+		}
+		
+		return goodShop;
+		
 	}
 	
 	public boolean movieTitleChecker(String title)
