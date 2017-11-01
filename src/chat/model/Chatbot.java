@@ -18,7 +18,7 @@ public class Chatbot
 	private String intro;
 	private LocalTime currentTime;
 	
-	public Chatbot(String username, List movieList, List shoppingList)
+	public Chatbot(String username)
 	{
 		this.movieList = new ArrayList<String>();
 		this.shoppingList = new ArrayList<String>();
