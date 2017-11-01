@@ -19,7 +19,7 @@ public class Movie
 		this.ratingMPAA = "PG"; // null
 		this.review = "It was so terrible, I would not recommend this movie to my worst enemies."; // null
 		this.length = 50; // -99
-		this.releaseDate = releaseDate; // null
+		//this.releaseDate = ; // null
 		this.starScore = starScore; // Double.NaN
 	}
 
