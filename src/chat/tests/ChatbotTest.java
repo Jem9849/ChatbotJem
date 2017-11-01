@@ -160,7 +160,7 @@ public class ChatbotTest
 	public void testGetCuteAnimalMemes()
 	{
 		int otterCount = 0;
-		int flooferCount = 0;
+		int FlooferCount = 0;
 		int kittieCount = 0;
 		for (String cute : testedChatbot.getCuteAnimalMemes())
 		{
@@ -168,9 +168,9 @@ public class ChatbotTest
 			{
 				otterCount += 1;
 			}
-			if (cute.toUpperCase().contains("floofer"))
+			if (cute.toUpperCase().contains("FLOOFER"))
 			{
-				flooferCount += 1;
+				FlooferCount += 1;
 			}
 			if (cute.toLowerCase().indexOf("kittie") > -1)
 			{
@@ -179,7 +179,7 @@ public class ChatbotTest
 		}
 		
 		assertTrue("You must have at least one otter in your list", otterCount > 0 );
-		assertTrue("You must have at least one floofer in your list", flooferCount > 0 );
+		assertTrue("You must have at least one floofer in your list", FlooferCount > 0 );
 		assertTrue("You must have at least one kittie in your list", kittieCount > 0 );
 	}
 	

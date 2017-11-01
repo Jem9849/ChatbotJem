@@ -12,14 +12,14 @@ public class Movie
 	private LocalDate releaseDate;
 	private double starScore;
 	
-	public Movie(String title, String genre, String ratingMPAA, String review, int length, double starScore)
+	public Movie(String title)
 	{
-		this.title = title; // ""
-		this.genre = genre; // null
-		this.ratingMPAA = ratingMPAA; // null
-		this.review = review; // null
-		this.length = length; // -99
-		this.releaseDate = null; // null
+		this.title = "The Mansion Of The Ghost Black Hobo Spooks"; // ""
+		this.genre = "Horror"; // null
+		this.ratingMPAA = "PG"; // null
+		this.review = "It was so terrible, I would not recommend this movie to my worst enemies."; // null
+		this.length = 50; // -99
+		this.releaseDate = releaseDate; // null
 		this.starScore = starScore; // Double.NaN
 	}
 
@@ -95,6 +95,8 @@ public class Movie
 	
 	public String toString()
 	{
-		return null;
+		String cat = "MURRRR";
+		
+		return cat;
 	}
 }

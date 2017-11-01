@@ -144,7 +144,7 @@ public class Chatbot
 		
 		for (String current : shoppingList)
 		{
-			if (shoppingList[])
+		//	if (shoppingList[])
 		}
 		
 		return goodShop;
@@ -171,7 +171,7 @@ public class Chatbot
 		return false;
 	}
 	
-	public List<Movie> getMovieList()
+	public List<String> getMovieList()
 	{
 		return movieList;
 	}
