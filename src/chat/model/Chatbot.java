@@ -166,7 +166,6 @@ public class Chatbot
 		boolean  slugbait = false;
 		boolean  veggies = false;
 		boolean snacks = false;
-		shoppingItem = shoppingList;
 		
 		for (int index = 0; index < )
 		{
