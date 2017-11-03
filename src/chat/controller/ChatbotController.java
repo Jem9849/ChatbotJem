@@ -31,10 +31,10 @@ public class ChatbotController
 		return input;
 	}
 	
-	private String popupChat(String chat)
+	private String popupChat(String chat) // Je ne sais pas qu'il fait.
 	{
-		String chatbotSays = "";
-		
+		String chatbotSays = ""; 
+
 		chatbotSays += chatbot.processConversation(chat);
 		
 		return chatbotSays;
