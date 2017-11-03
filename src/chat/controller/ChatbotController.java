@@ -39,4 +39,14 @@ public class ChatbotController
 		
 		return chatbotSays;
 	}
+	
+	public Chatbot getChatbot()
+	{
+		return chatbot;
+	}
+	
+	public PopupDisplay getDisplay()
+	{
+		return display;
+	}
 }

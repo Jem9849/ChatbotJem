@@ -20,14 +20,14 @@ public class Chatbot
 	
 	public Chatbot(String username)
 	{
-		this.movieList = new ArrayList<String>();
-		this.shoppingList = new ArrayList<String>();
-		this.cuteAnimalMemes = null;
+		this.movieList = new ArrayList<String>(5);
+		this.shoppingList = new ArrayList<String>(9);
+		this.cuteAnimalMemes = new ArrayList<String>(5);
 		this.currentTime = null;
 		this.questions = new String [10];
-		this.username = username;
+		this.username = "@mrweirdoguy";
 		this.content = null;
-		this.intro = null;
+		this.intro = "Hello I'm a weirdo chatbot that hates everyone.";
 		this.currentTime = null;
 		this.topics = new String [7];
 		this.verbs = new String [4];
@@ -35,6 +35,9 @@ public class Chatbot
 		
 		buildVerbs();
 		buildShoppingList();
+		buildMovieList();
+		buildCuteAnimals();
+		buildQuestions();
 	}
 	
 	private void buildVerbs()
@@ -47,6 +50,11 @@ public class Chatbot
 
 	private void buildMovieList()
 	{
+		movieList.add("Rawr");
+		movieList.add("Rawr2");
+		movieList.add("Rawr3");
+		movieList.add("Rawr4");
+		movieList.add("Rawr5");
 		
 	}
 	
@@ -55,23 +63,36 @@ public class Chatbot
 		shoppingList.add("snacks");
 		shoppingList.add("veggies");
 		shoppingList.add("protein");
-		shoppingList.add("slug bait");
-		shoppingList.add("gross things");
-		shoppingList.add("drugs");
+		shoppingList.add("A Dasani Water Bottle Outfitted With Explosives (terror)");
+		shoppingList.add("gross things(ew)");
+		shoppingList.add("drugs(ew)");
 		shoppingList.add("hippoes(protein)");
-		shoppingList.add("drinks");
-		shoppingList.add("TOMOTTOES");
-		shoppingList.add("A fistful of knowledge");
+		shoppingList.add("drinks(drinks)");
+		shoppingList.add("TOMOTTOES(veggies)");
+		shoppingList.add("A fistful of knowledge(ew)");
 	}
 	
 	private void buildCuteAnimals()
 	{
-		
+		cuteAnimalMemes.add("FLOOFER");
+		cuteAnimalMemes.add("kittie");
+		cuteAnimalMemes.add("otter");
+		cuteAnimalMemes.add("nuke");
+		cuteAnimalMemes.add("pupper");
 	}
 	
 	private void buildQuestions()
 	{
-		
+		questions[0] = "What is your name?";
+		questions[1] = "HATE me?";
+		questions[2] = "am detestant of me?";
+		questions[3] = "am thinking about me?";
+		questions[4] = "LOVE me?";
+		questions[5] = "HATE you?";
+		questions[6] = "am detestant of you?";
+		questions[7] = "am thinking about you?";
+		questions[8] = "HATE friends?";
+		questions[9] = "am detestant of friends?";
 	}
 	
 	public String processConversation(String input)
@@ -140,15 +161,42 @@ public class Chatbot
 	
 	public boolean shoppingListChecker(String shoppingItem)
 	{
-		boolean goodShop = true; 
+		boolean ok = false;
+		boolean  protein = false;
+		boolean  slugbait = false;
+		boolean  veggies = false;
+		boolean snacks = false;
 		
-		for (String current : shoppingList)
+		for ()
 		{
-		//	if (shoppingList[])
+			
+			if (current.contains("protein"))
+			{
+				protein = true;
+			}
+			
+			else if (current.contains("slug bait"))
+			{
+				slugbait = true;
+			}
+			
+			else if (current.contains("veggies"))
+			{
+				veggies = true;
+			}
+			
+			else if (current.contains("snacks"))
+			{
+				snacks = true;
+			}
 		}
 		
-		return goodShop;
+		if (protein == true && slugbait == false && veggies == true && snacks == true)
+		{
+			ok = true;
+		}
 		
+		return ok;
 	}
 	
 	public boolean movieTitleChecker(String title)
@@ -177,7 +225,7 @@ public class Chatbot
 	}
 	
 	public List<String> getShoppingList()
-	{
+	{		
 		return shoppingList;
 	}
 	
@@ -188,7 +236,7 @@ public class Chatbot
 
 	public String [] getQuestions()
 	{
-		return null;
+		return questions;
 	}
 	
 	public String[] getVerbs()
@@ -218,12 +266,12 @@ public class Chatbot
 
 	public String getIntro()
 	{
-		return null;
+		return intro;
 	}
 	
 	public LocalTime getCurrentTime()
 	{
-		return null;
+		return currentTime;
 	}
 	
 	public void setUsername(String username)
