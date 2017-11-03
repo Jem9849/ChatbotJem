@@ -166,10 +166,10 @@ public class Chatbot
 		boolean  slugbait = false;
 		boolean  veggies = false;
 		boolean snacks = false;
+		shoppingItem = shoppingList.indexOf(index);
 		
-		for (int index = 0; index < )
+		for (int index = 0; index < shoppingList.size(); index++)
 		{
-			
 			if (current.contains("protein"))
 			{
 				protein = true;
