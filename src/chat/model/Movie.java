@@ -22,6 +22,8 @@ public class Movie
 		this.releaseDate = null; // null
 		this.starScore = starScore; // Double.NaN
 	}
+	
+	// This is basically a huge set of setters and getters which set up and return each value without having to grab the private variables themselves directly.
 
 	public String getTitle()
 	{
