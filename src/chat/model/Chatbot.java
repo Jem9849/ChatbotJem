@@ -3,10 +3,11 @@ package chat.model;
 import java.util.List;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import chat.model.Movie;
 
 public class Chatbot
 {
-	private List<String> movieList;
+	private List<Movie> movieList;
 	private List<String> shoppingList;
 	private List<String> cuteAnimalMemes;
 	private String [] verbs;
@@ -20,7 +21,7 @@ public class Chatbot
 	
 	public Chatbot(String username)
 	{
-		this.movieList = new ArrayList<String>(5);
+		this.movieList = new ArrayList<Movie>(5);
 		this.shoppingList = new ArrayList<String>(10);
 		this.cuteAnimalMemes = new ArrayList<String>(5);
 		this.currentTime = null;
@@ -51,11 +52,13 @@ public class Chatbot
 
 	private void buildMovieList()
 	{
+		/*
 		movieList.add("Rawr");
 		movieList.add("Rawr2");
 		movieList.add("Rawr3");
 		movieList.add("Rawr4");
 		movieList.add("Rawr5");
+		*/
 		
 	}
 	
@@ -106,7 +109,7 @@ public class Chatbot
 		return chatbotResponse;
 	}
 	
-	public String buildChatbotResponse()
+	private String buildChatbotResponse()
 	{
 		String response = "I ";
 		int random = (int) (Math.random() * verbs.length);
@@ -118,6 +121,12 @@ public class Chatbot
 		
 		random = (int) (Math.random() * questions.length);
 		response += questions[random];
+		
+		if (random % 2 == 0)
+		{
+			random = (int) (Math.random() * movieList.size());
+			response += "\n" + movieList.get(random).getTitle() + " is a great movie!";
+		}
 		
 		return response;  
 	}
@@ -145,7 +154,7 @@ public class Chatbot
 		return false;
 	}
 	
-	public boolean userNameChecker(String input)
+	/* public boolean userNameChecker(String input)
 	{
 		boolean ok = false;
 		if (input != null)
@@ -155,7 +164,7 @@ public class Chatbot
 		
 		return ok;
 	}
-	
+	*/
 	public boolean contentChecker(String contentCheck)
 	{
 		return false;
