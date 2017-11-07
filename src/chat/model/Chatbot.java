@@ -145,7 +145,7 @@ public class Chatbot
 		return false;
 	}
 	
-	public boolean userNameChecker(String input)
+	/*public boolean userNameChecker(String input)
 	{
 		boolean ok = false;
 		char[] inpt = input.toCharArray();
@@ -166,7 +166,7 @@ public class Chatbot
 		
 		return ok;
 	}
-	
+	*/
 	public boolean contentChecker(String contentCheck)
 	{
 		return false;
