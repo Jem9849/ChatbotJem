@@ -21,7 +21,7 @@ public class Chatbot
 	public Chatbot(String username)
 	{
 		this.movieList = new ArrayList<String>(5);
-		this.shoppingList = new ArrayList<String>(9);
+		this.shoppingList = new ArrayList<String>(10);
 		this.cuteAnimalMemes = new ArrayList<String>(5);
 		this.currentTime = null;
 		this.questions = new String [10];
@@ -38,6 +38,7 @@ public class Chatbot
 		buildMovieList();
 		buildCuteAnimals();
 		buildQuestions();
+		buildChatbotResponse();
 	}
 	
 	private void buildVerbs()
@@ -146,7 +147,24 @@ public class Chatbot
 	
 	public boolean userNameChecker(String input)
 	{
-		return false;
+		boolean ok = false;
+		char[] inpt = input.toCharArray();
+		int count = 0;
+		
+		for (int i = 0; i < input.length(); i++)
+		{
+			if(inpt[i] == '@')
+			{
+				count++;
+			}
+		}
+		
+		if (input != null && count == 1 && (!(input.contains(".com"))))
+		{
+			ok = true;
+		}
+		
+		return ok;
 	}
 	
 	public boolean contentChecker(String contentCheck)
@@ -162,38 +180,14 @@ public class Chatbot
 	public boolean shoppingListChecker(String shoppingItem)
 	{
 		boolean ok = false;
-		boolean  protein = false;
-		boolean  slugbait = false;
-		boolean  veggies = false;
-		boolean snacks = false;
-		shoppingItem = shoppingList.indexOf(index);
 		
 		for (int index = 0; index < shoppingList.size(); index++)
 		{
-			if (current.contains("protein"))
-			{
-				protein = true;
-			}
 			
-			else if (current.contains("slug bait"))
+			if (shoppingItem.contains(shoppingList.get(index)))
 			{
-				slugbait = true;
+				ok = true;
 			}
-			
-			else if (current.contains("veggies"))
-			{
-				veggies = true;
-			}
-			
-			else if (current.contains("snacks"))
-			{
-				snacks = true;
-			}
-		}
-		
-		if (protein == true && slugbait == false && veggies == true && snacks == true)
-		{
-			ok = true;
 		}
 		
 		return ok;
