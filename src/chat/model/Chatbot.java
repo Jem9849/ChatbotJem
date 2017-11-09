@@ -227,7 +227,9 @@ public class Chatbot
 
 	public boolean keyboardMashChecker(String sample)
 	{
-		return false;
+		boolean ok = false;
+		
+		if (sample != null && sample != "")
 	}
 	
 	public List<Movie> getMovieList()
