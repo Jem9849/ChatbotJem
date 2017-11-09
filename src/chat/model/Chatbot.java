@@ -52,14 +52,16 @@ public class Chatbot
 
 	private void buildMovieList()
 	{
-		/*
-		movieList.add("Rawr");
-		movieList.add("Rawr2");
-		movieList.add("Rawr3");
-		movieList.add("Rawr4");
-		movieList.add("Rawr5");
-		*/
-		
+		Movie chris = new Movie("Christoph");
+		Movie chris2 = new Movie("Christoph2");
+		Movie chris3 = new Movie("Christoph3");
+		Movie chris4 = new Movie("Christoph4");
+		Movie chris5 = new Movie("Christoph5");
+		movieList.add(chris);
+		movieList.add(chris2);
+		movieList.add(chris3);
+		movieList.add(chris4);
+		movieList.add(chris5);
 	}
 	
 	private void buildShoppingList()
@@ -99,6 +101,11 @@ public class Chatbot
 		questions[9] = "am detestant of friends?";
 	}
 	
+	/**
+	 * It repeats what the user said, and then builds a response to return.  
+	 * @param input The parameter is the input from the user.
+	 * @return This returns what the chatbot will say in response and what the user says. 
+	 */
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
@@ -108,6 +115,11 @@ public class Chatbot
 		
 		return chatbotResponse;
 	}
+	
+	/**
+	 * It returns a response built using randomly generated words from verbs, topics, and questions. It may also take from movieList. 
+	 * @return Returns the final built response to processConversation. 
+	 */
 	
 	private String buildChatbotResponse()
 	{
@@ -154,7 +166,7 @@ public class Chatbot
 		return false;
 	}
 	
-	/* public boolean userNameChecker(String input)
+	 public boolean userNameChecker(String input)
 	{
 		boolean ok = false;
 		if (input != null)
@@ -164,7 +176,7 @@ public class Chatbot
 		
 		return ok;
 	}
-	*/
+	
 	public boolean contentChecker(String contentCheck)
 	{
 		return false;
@@ -203,7 +215,14 @@ public class Chatbot
 
 	public boolean quitChecker(String exitString)
 	{
-		return false;
+		boolean ok = false;
+		
+		if (exitString != null && exitString.equalsIgnoreCase("quit") )
+		{
+			ok = true;
+		}
+		
+		return ok;
 	}
 
 	public boolean keyboardMashChecker(String sample)
@@ -211,7 +230,7 @@ public class Chatbot
 		return false;
 	}
 	
-	public List<String> getMovieList()
+	public List<Movie> getMovieList()
 	{
 		return movieList;
 	}
