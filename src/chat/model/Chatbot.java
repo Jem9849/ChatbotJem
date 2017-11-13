@@ -229,7 +229,9 @@ public class Chatbot
 	{
 		boolean ok = false;
 		
-		if (sample != null && sample != "")
+		//if (sample != null && sample != "")
+		
+		return ok;
 	}
 	
 	public List<Movie> getMovieList()
