@@ -10,6 +10,8 @@ public class ChatFrame extends JFrame
 	
 	public ChatFrame(ChatbotController appController)
 	{
+		super();
+		
 		this.appController = appController;
 		appPane = new ChatPanel(appController);
 		
@@ -20,8 +22,10 @@ public class ChatFrame extends JFrame
 	{
 		this.setContentPane(appPane);
 		this.setTitle("MURRRRRRRRRRRRRRRRRRRRRRRRR");
-		//this.setResizable(false);
+		this.setResizable(false);
 		this.setSize(500, 500);
 		this.setVisible(true);
 	}
+	
+	
 }
