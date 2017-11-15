@@ -35,7 +35,7 @@ public class ChatbotController
 		return input;
 	}
 	
-	private String popupChat(String chat) // Je ne sais pas qu'il fait.
+	private String popupChat(String chat) // Je ne sais pas qu'il a fait.
 	{
 		String chatbotSays = ""; 
 
