@@ -27,7 +27,7 @@ public class Chatbot
 		this.currentTime = null;
 		this.questions = new String [10];
 		this.username = "@mrweirdoguy";
-		this.content = null;
+		this.content = "The Title of Titles About Titles In The Title of Titles.";
 		this.intro = "Hello I'm a weirdo chatbot that hates everyone.";
 		this.currentTime = null;
 		this.topics = new String [7];
