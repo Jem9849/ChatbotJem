@@ -182,7 +182,7 @@ public class Chatbot
 	{
 		boolean ok = false;
 		
-		if (contentCheck != null)
+		if (contentCheck != null && contentCheck.contains(content))
 		{
 			ok = true;
 		}
