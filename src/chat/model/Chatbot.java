@@ -27,7 +27,7 @@ public class Chatbot
 		this.currentTime = null;
 		this.questions = new String [10];
 		this.username = "@mrweirdoguy";
-		this.content = "The Title of Titles About Titles In The Title of Titles.";
+		this.content = "TheTitleofTitlesAboutTitlesInTheTitleofTitles.";
 		this.intro = "Hello I'm a weirdo chatbot that hates everyone.";
 		this.currentTime = null;
 		this.topics = new String [7];
@@ -169,6 +169,7 @@ public class Chatbot
 	 public boolean userNameChecker(String input)
 	{
 		boolean ok = false;
+		
 		if (input != null)
 		{
 			ok = true;
@@ -179,12 +180,28 @@ public class Chatbot
 	
 	public boolean contentChecker(String contentCheck)
 	{
-		return false;
+		boolean ok = false;
+		
+		if (contentCheck != null)
+		{
+			ok = true;
+		}
+		return ok;
 	}
 	
 	public boolean cuteAnimalMemeChecker(String input)
 	{
-		return false;
+		boolean ok = false; 
+		
+		for (int i = 0; i < cuteAnimalMemes.size(); i++)
+		{
+			if (input.contains(cuteAnimalMemes.get(i)))
+			{
+				ok = true;
+			}
+		}
+		
+		return ok;
 	}
 	
 	public boolean shoppingListChecker(String shoppingItem)

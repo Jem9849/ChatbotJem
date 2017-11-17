@@ -23,6 +23,7 @@ public class ChatPanel extends JPanel
 	private SpringLayout appLayout;
 	private JTextField inputField;
 	private JTextArea chatArea;
+	private JButton checkerButton;
 	
 	// Let's also thank our construction crew. They've been tasked by our data members to help out. Isn't that "super"? Let's also call our setupPanel, setupLayout, and setupListeners to the stage. 
 	public ChatPanel(ChatbotController appController)
@@ -34,7 +35,7 @@ public class ChatPanel extends JPanel
 		appLayout = new SpringLayout();
 		chatArea = new JTextArea(10,25);
 		inputField = new JTextField(20);
-		
+		checkerButton = new JButton("Check Your Privledge");		
 		
 		setupPanel();
 		setupLayout();
@@ -50,14 +51,15 @@ public class ChatPanel extends JPanel
 		this.add(chatButton);
 		this.add(inputField);
 		this.add(chatArea);
+		this.add(checkerButton);
 		
 		chatArea.setEnabled(false);
 		chatArea.setEditable(false);
 		
 	}
 	
-	// Hello everyone. My name is setupListeners. What I basically do is set up events and actions. I somewhat give functionality. I don't actually do the functionality myself however. I just connect them
-	// to an event.
+	// Hello everyone. My name is setupListeners. What I basically do is set up events and actions. I somewhat give functionality. I don't actually do the functionality myself a lot however. 
+	// I like to connect events to actions instead. 
 	private void setupListeners()
 	{
 		chatButton.addActionListener(new ActionListener() 
@@ -68,6 +70,15 @@ public class ChatPanel extends JPanel
 				String displayText = appController.interactWithChatbot(userText);
 				chatArea.append(displayText);
 				inputField.setText("");
+			}
+			
+		});
+		
+		checkerButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
 			}
 		});
 	}
@@ -82,5 +93,7 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.NORTH, inputField, 0, SpringLayout.NORTH, chatButton);
 		appLayout.putConstraint(SpringLayout.WEST, inputField, 0, SpringLayout.WEST, chatArea);
 		appLayout.putConstraint(SpringLayout.EAST, chatButton, 0, SpringLayout.EAST, chatArea);
+		appLayout.putConstraint(SpringLayout.SOUTH, checkerButton, -6, SpringLayout.NORTH, chatButton);
+		appLayout.putConstraint(SpringLayout.EAST, checkerButton, -10, SpringLayout.EAST, this);
 	}
 }

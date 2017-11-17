@@ -19,7 +19,10 @@ public class ChatbotController
 	 
 	public void start() // Makes a string called response which displays takes to gather a response from a user. It then checks the response to see whether it says quit, or if it is the correct length.
 	{
-		String response = display.collectResponse("What do you want to talk about?");
+		
+		display.displayText("Welcome to all hell broken loose.");
+		
+		//String response = display.collectResponse("What do you want to talk about?");
 		
 	/*	while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response)) 
 		{
@@ -32,7 +35,22 @@ public class ChatbotController
 	
 	public String interactWithChatbot(String input)
 	{
-		return input;
+		String MURRRRChat = "";
+		
+		if(chatbot.quitChecker(input))
+		{
+			close();
+		}
+		
+		MURRRRChat += chatbot.processConversation(input);
+		
+		return MURRRRChat;
+	}
+	
+	private void close()
+	{
+		display.displayText("Gooby plz.");
+		System.exit(0);
 	}
 	
 	private String popupChat(String chat) // Je ne sais pas qu'il a fait.
