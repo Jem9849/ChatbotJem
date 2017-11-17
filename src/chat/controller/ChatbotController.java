@@ -44,6 +44,8 @@ public class ChatbotController
 		return chatbotSays;
 	}
 	
+	// Things that return the chatbot, display, appFrame.
+	
 	public Chatbot getChatbot()
 	{
 		return chatbot;

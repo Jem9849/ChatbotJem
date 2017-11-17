@@ -13,14 +13,18 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener; 
 
+// Welcome to ChatPanel, where everything is nearly entirely boring. Here we extend our hands towards JPanel. Give a clap for JPanel. He brought a few stuff for us, isn't that sweet?
 public class ChatPanel extends JPanel
 {
+	
+	// Let's also honor those who have set up this ChatPanel. Let's clap our hands together for the data members. 
 	private ChatbotController appController;
 	private JButton chatButton;
 	private SpringLayout appLayout;
 	private JTextField inputField;
 	private JTextArea chatArea;
 	
+	// Let's also thank our construction crew. They've been tasked by our data members to help out. Isn't that "super"? Let's also call our setupPanel, setupLayout, and setupListeners to the stage. 
 	public ChatPanel(ChatbotController appController)
 	{
 		super();
@@ -37,6 +41,8 @@ public class ChatPanel extends JPanel
 		setupListeners();
 	}
 	
+	// Hi I'm the setupPanel, I thank you for the honor of being here today to speak. I help out setup the panel, like changing background color, or adding buttons and input fields. I don't really add 
+	// functionality though. That is my friend, setupListeners. Speaking of him...
 	private void setupPanel()
 	{
 		this.setBackground(Color.BLUE);
@@ -50,6 +56,8 @@ public class ChatPanel extends JPanel
 		
 	}
 	
+	// Hello everyone. My name is setupListeners. What I basically do is set up events and actions. I somewhat give functionality. I don't actually do the functionality myself however. I just connect them
+	// to an event.
 	private void setupListeners()
 	{
 		chatButton.addActionListener(new ActionListener() 
@@ -61,6 +69,7 @@ public class ChatPanel extends JPanel
 		});
 	}
 	
+	// Hey everyone, I do a pretty important job. I setup the layout and add in the position of things. Although, sometimes I misplace where I put all my positions, and need to go find them.
 	private void setupLayout()
 	{
 		appLayout.putConstraint(SpringLayout.NORTH, chatArea, 20, SpringLayout.NORTH, this);
