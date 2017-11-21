@@ -53,6 +53,42 @@ public class ChatbotController
 		return MURRRRChat;
 	}
 	
+	public String useCheckers(String text)
+	{
+		String response = "";
+		
+		if(chatbot.contentChecker(text))
+		{
+			response += "This text matches the special content\n";
+		}
+		if (chatbot.cuteAnimalMemeChecker(text))
+		{
+			response += "This text matches the animal memes\n";		
+		}
+		if (chatbot.htmlTagChecker(text))
+		{
+			response += "This text matches the correct HTML tag\n";
+		}
+		if(chatbot.keyboardMashChecker(text))
+		{
+			response += "This text does not look like keyboard mashing \n";
+		}
+		if(chatbot.lengthChecker(text))
+		{
+			response += "This text is the correct length \n";
+		}
+		if(chatbot.movieGenreChecker(text))
+		{
+			response += "";
+		}
+		if(chatbot.movieTitleChecker(text))
+		{
+			response += "";
+		}
+		
+		return response;
+	}
+	
 	private void close()
 	{
 		display.displayText("Gooby plz.");

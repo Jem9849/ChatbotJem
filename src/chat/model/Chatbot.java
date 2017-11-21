@@ -26,7 +26,7 @@ public class Chatbot
 		this.cuteAnimalMemes = new ArrayList<String>(5);
 		this.currentTime = null;
 		this.questions = new String [10];
-		this.username = "@mrweirdoguy";
+		this.username = username;
 		this.content = "TheTitleofTitlesAboutTitlesInTheTitleofTitles.";
 		this.intro = "Hello I'm a weirdo chatbot that hates everyone.";
 		this.currentTime = null;
@@ -57,11 +57,13 @@ public class Chatbot
 		Movie chris3 = new Movie("Christoph3");
 		Movie chris4 = new Movie("Christoph4");
 		Movie chris5 = new Movie("Christoph5");
+		Movie chris6 = new Movie("Christoph5");
 		movieList.add(chris);
 		movieList.add(chris2);
 		movieList.add(chris3);
 		movieList.add(chris4);
 		movieList.add(chris5);
+		movieList.add(chris6);
 	}
 	
 	private void buildShoppingList()
@@ -76,6 +78,7 @@ public class Chatbot
 		shoppingList.add("drinks(drinks)");
 		shoppingList.add("TOMOTTOES(veggies)");
 		shoppingList.add("A fistful of knowledge(ew)");
+		shoppingList.add("Chocolatedrunks(snacks)");
 	}
 	
 	private void buildCuteAnimals()
@@ -170,7 +173,7 @@ public class Chatbot
 	{
 		boolean ok = false;
 		
-		if (input != null)
+		if (input != null )
 		{
 			ok = true;
 		}
@@ -227,7 +230,13 @@ public class Chatbot
 	
 	public boolean movieGenreChecker(String genre)
 	{
-		return false;
+		boolean ok = false;
+		//if (genre != null && )
+		{
+			ok = true;
+		}
+		
+		return ok;
 	}
 
 	public boolean quitChecker(String exitString)
