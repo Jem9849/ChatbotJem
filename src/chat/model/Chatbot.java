@@ -185,7 +185,26 @@ public class Chatbot
 	
 	public boolean htmlTagChecker(String input)
 	{
-		return false;
+		boolean ok = true;
+		
+		if (!(input.contains("<")) || !(input.contains(">")))
+				{
+			ok = false;
+				}
+		else if (input.contains("< >"))
+		{
+			ok = false;
+		}
+		else if (!(input.indexOf("< >") < input.indexOf("</ >")))
+		{
+			ok = false;
+		}
+		else if (!(input.length() == 8) && input, )
+		{
+			
+		}
+		
+		return ok;
 	}
 	
 	 public boolean userNameChecker(String input)
@@ -250,7 +269,8 @@ public class Chatbot
 	public boolean movieGenreChecker(String genre)
 	{
 		boolean ok = false;
-		//if (genre != null && )
+		
+		if (genre != null && genre.contains("Documentary") && genre.contains("Thriller") )
 		{
 			ok = true;
 		}
