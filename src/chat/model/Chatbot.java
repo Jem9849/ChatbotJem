@@ -185,26 +185,27 @@ public class Chatbot
 	
 	public boolean htmlTagChecker(String input)
 	{
-		boolean ok = true;
 		
 		if (!(input.contains("<")) || !(input.contains(">")))
-				{
-			ok = false;
-				}
-		else if (input.contains("< >"))
 		{
-			ok = false;
+			return false;
+		}
+		else if (!(input.contains("< >")))
+		{
+			return false;
 		}
 		else if (!(input.indexOf("< >") < input.indexOf("</ >")))
 		{
-			ok = false;
+			return false;
 		}
-		else if (!(input.length() == 8) && input, )
+		else if (input.length() == 8 && (!(input.indexOf("<A HREF=\"\">") < input.indexOf("</ >"))))
 		{
-			
+			return false;
 		}
 		
-		return ok;
+		else if ()
+		
+		return true;
 	}
 	
 	 public boolean userNameChecker(String input)
