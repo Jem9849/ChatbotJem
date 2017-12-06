@@ -24,12 +24,11 @@ public class Chatbot
 		this.movieList = new ArrayList<Movie>(5);
 		this.shoppingList = new ArrayList<String>(10);
 		this.cuteAnimalMemes = new ArrayList<String>(5);
-		this.currentTime = null;
+		this.currentTime = LocalTime.now();
 		this.questions = new String [10];
 		this.username = username;
 		this.content = "TheTitleofTitlesAboutTitlesInTheTitleofTitles.";
 		this.intro = "Hello I'm a weirdo chatbot that hates everyone.";
-		this.currentTime = null;
 		this.topics = new String [7];
 		this.verbs = new String [4];
 		this.followUps = new String [5];
@@ -112,6 +111,8 @@ public class Chatbot
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
+		currentTime = LocalTime.now();
+		chatbotResponse += currentTime.getHour() + ":" + currentTime.getMinute() + " ";
 		chatbotResponse += "You said:" + "\n" + input + "\n";
 		
 		chatbotResponse += buildChatbotResponse();
@@ -165,6 +166,13 @@ public class Chatbot
 		return response;  
 	}
 	
+	public String toString()
+	{
+		String message = "Hello there weirdos";
+		
+		return message;
+	}
+	
 	public boolean lengthChecker(String input)
 	{
 		boolean validLength = false;
@@ -185,11 +193,11 @@ public class Chatbot
 	
 	public boolean htmlTagChecker(String input)
 	{
-		boolean ok = false;
+		boolean ok = true;
 		
 		if(input == null || !input.contains("<"))
 		{
-			return ok;
+			ok = false;
 		}
 		
 		int posOFirst = input.indexOf("<");
@@ -206,25 +214,33 @@ public class Chatbot
 		{
 			ok = true;
 		}
+		
+		else if (posOFirst > posCFirst)
+		{
+			tagText = input.substring(posOFirst + 1, posCFirst).toLowerCase();
+			posOSec = input.toLowerCase().indexOf("</" + tagText, posCFirst);
+		}
+		
 		else if (!(input.indexOf("< >") < input.indexOf("</ >")))
 		{
-			return false;
+			ok = false;
 		}
 		else if (input.length() == 8 && (!(input.indexOf("<A HREF=\"\">") < input.indexOf("</ >"))))
 		{
-			return false;
+			ok = false;
 		}
 		
-		else if ()
+		else if (input.)
 		
-		return true;
+		return ok;
 	}
 	
 	 public boolean userNameChecker(String input)
 	{
 		boolean ok = false;
 		
-		if (input != null )
+		if (input != null && input.startsWith("@") && !(input.contains("@@")) && !(input.contains(" @") 
+				 && !(input.contains(".com") && !(input.contains(".net") && !(input.contains(".org"))))))
 		{
 			ok = true;
 		}
@@ -276,14 +292,22 @@ public class Chatbot
 	
 	public boolean movieTitleChecker(String title)
 	{
-		return false;
+		
+		boolean ok = false;
+		
+		if (title != null && title.contains("Spiderman") || title.contains("Hidden Figures"))
+		{
+			ok = true;
+		}
+		
+		return ok;
 	}
 	
 	public boolean movieGenreChecker(String genre)
 	{
 		boolean ok = false;
 		
-		if (genre != null && genre.contains("Documentary") && genre.contains("Thriller") )
+		if (genre != null && genre.contains("Documentary") || genre.contains("Thriller") )
 		{
 			ok = true;
 		}
@@ -307,7 +331,12 @@ public class Chatbot
 	{
 		boolean ok = false;
 		
-		//if (sample != null && sample != "")
+		if (sample != null && sample.contains("sdf") || sample.contains("dfg") 
+			 || sample.contains("cvb") || sample.contains("kjh") || sample.contains(",./") || sample.contains("SDF") || sample.contains("DFG") 
+			 || sample.contains("CVB") || sample.contains("KJH") && !(sample.contains("S.D.F.") && !(sample.contains("derf"))))
+		{
+			ok = true;
+		}
 		
 		return ok;
 	}
