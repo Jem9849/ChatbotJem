@@ -220,11 +220,7 @@ public class Chatbot
 		{
 			tagText = input.substring(posOFirst + 1, posCFirst).toLowerCase();
 			posOSec = input.toLowerCase().indexOf("</" + tagText, posCFirst);
-			
-				if (posOSec > -1)
-				{
-					ok = false;
-				}
+			posCSec = input.toLowerCase().indexOf(">" + tagText, posOSec);
 
 		}
 		
