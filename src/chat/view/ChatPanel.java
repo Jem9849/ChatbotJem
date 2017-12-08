@@ -28,6 +28,7 @@ public class ChatPanel extends JPanel
 	private JButton checkerButton;
 	private JLabel infoLabel;
 	private JScrollPane chatScrollPane;
+	private JButton meowButton;
 	
 	// Let's also thank our construction crew. They've been tasked by our data members to help out. Isn't that "super"? Let's also call our setupPanel, setupLayout, and setupListeners to the stage. 
 	public ChatPanel(ChatbotController appController)
@@ -43,6 +44,8 @@ public class ChatPanel extends JPanel
 		checkerButton = new JButton("Check Your Privledge");
 		infoLabel.setForeground(Color.WHITE);
 		chatScrollPane = new JScrollPane();
+		meowButton = new JButton();
+		
 		
 		setupPanel();
 		setupLayout();

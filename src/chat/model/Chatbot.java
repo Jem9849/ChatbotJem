@@ -218,9 +218,19 @@ public class Chatbot
 		
 		else if (posOFirst > posCFirst)
 		{
-			tagText = input.substring(posOFirst + 1, posCFirst).toLowerCase();
-			posOSec = input.toLowerCase().indexOf("</" + tagText, posCFirst);
-			posCSec = input.toLowerCase().indexOf(">" + tagText, posOSec);
+			tagText = input.substring(posOFirst + 1, posCFirst).toLowerCase(); //
+			posOSec = input.toLowerCase().indexOf("</" + tagText + ">", posCFirst ); //
+			
+			if (input.indexOf(tagText) > posOSec)
+			{
+				ok = false;
+			}
+			
+			else if (input.length() == 8 && input.toUpperCase().contains("<A HREF=\"\"") && input.indexOf(tagText) < posOSec)
+			{
+				ok = true;
+			}
+			
 
 		}
 		
@@ -230,10 +240,10 @@ public class Chatbot
 			ok = false;
 		}
 		
-		else if (input.length() == 8 && (!(input.indexOf("<A HREF=\"\">") < input.indexOf("</ >"))))
-		{
-			ok = false;
-		}
+//		if (input.length() == 8 && input.toUpperCase().contains("A HREF") && input.toLowerCase().indexOf("</" +))
+//		{
+//			ok = false;
+//		}
 		
 		return ok;
 	}
