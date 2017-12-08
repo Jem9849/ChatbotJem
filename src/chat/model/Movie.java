@@ -19,8 +19,8 @@ public class Movie
 		this.ratingMPAA = "PG"; // null
 		this.review = "It was so terrible, I would not recommend this movie to my worst enemies."; // null
 		this.length = 50; // -99
-		this.releaseDate = null; // null
-		this.starScore = starScore; // Double.NaN
+		this.releaseDate = LocalDate.of(2017, 11, 12); // null
+		this.starScore = 5.3; // Double.NaN
 	}
 	
 	// This is basically a huge set of setters and getters which set up and return each value without having to grab the private variables themselves directly.

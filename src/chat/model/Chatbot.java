@@ -43,10 +43,10 @@ public class Chatbot
 	
 	private void buildVerbs()
 	{
-		verbs[0] = "LOVE";
-		verbs[1] = "HATE";
-		verbs[2] = "am detestant of";
-		verbs[3] = "am thinking about";
+		verbs[0] = "float";
+		verbs[1] = "tie";
+		verbs[2] = "run";
+		verbs[3] = "pop";
 	}
 
 	private void buildMovieList()
@@ -92,15 +92,15 @@ public class Chatbot
 	private void buildQuestions()
 	{
 		questions[0] = "What is your name?";
-		questions[1] = "HATE me?";
-		questions[2] = "am detestant of me?";
-		questions[3] = "am thinking about me?";
-		questions[4] = "LOVE me?";
-		questions[5] = "HATE you?";
-		questions[6] = "am detestant of you?";
-		questions[7] = "am thinking about you?";
-		questions[8] = "HATE friends?";
-		questions[9] = "am detestant of friends?";
+		questions[1] = "You HATE me?";
+		questions[2] = "Are you detestant of me?";
+		questions[3] = "Are you thinking about me?";
+		questions[4] = "Do you LOVE me?";
+		questions[5] = "Do you HATE you?";
+		questions[6] = "Am I detestant of you?";
+		questions[7] = "Am I thinking about you?";
+		questions[8] = "Do you HATE friends?";
+		questions[9] = "Am I detestant of your friends?";
 	}
 	
 	/**
@@ -195,7 +195,7 @@ public class Chatbot
 	{
 		boolean ok = true;
 		
-		if(input == null || !input.contains("<"))
+		if (input == null || !input.contains("<"))
 		{
 			ok = false;
 		}
@@ -210,7 +210,8 @@ public class Chatbot
 		{
 			ok = false;
 		}
-		if (input.toUpperCase().contains("<P>") || input.toLowerCase().contains("<br>"))
+		if (input.toUpperCase().contains("<P>") && input.toUpperCase().contains("</P>") || input.toLowerCase().contains("<br>") && input.toLowerCase().contains("</br>") 
+				|| input.toUpperCase().contains("<B>") && input.toUpperCase().contains("</B>"))
 		{
 			ok = true;
 		}
@@ -219,18 +220,24 @@ public class Chatbot
 		{
 			tagText = input.substring(posOFirst + 1, posCFirst).toLowerCase();
 			posOSec = input.toLowerCase().indexOf("</" + tagText, posCFirst);
+			
+				if (posOSec > -1)
+				{
+					ok = false;
+				}
+
 		}
+		
 		
 		else if (!(input.indexOf("< >") < input.indexOf("</ >")))
 		{
 			ok = false;
 		}
+		
 		else if (input.length() == 8 && (!(input.indexOf("<A HREF=\"\">") < input.indexOf("</ >"))))
 		{
 			ok = false;
 		}
-		
-		else if (input.)
 		
 		return ok;
 	}
