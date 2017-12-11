@@ -12,6 +12,9 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.ImageIcon;
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.net.URL;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener; 
@@ -31,6 +34,8 @@ public class ChatPanel extends JPanel
 	private JScrollPane chatScrollPane;
 	private JButton meowButton;
 	private ImageIcon button;
+	private URL url;
+	private AudioClip meow;
 	
 	// Let's also thank our construction crew. They've been tasked by our data members to help out. Isn't that "super"? Let's also call our setupPanel, setupLayout, and setupListeners to the stage. 
 	public ChatPanel(ChatbotController appController)
@@ -46,9 +51,9 @@ public class ChatPanel extends JPanel
 		checkerButton = new JButton("Check Your Privledge");
 		infoLabel.setForeground(Color.WHITE);
 		chatScrollPane = new JScrollPane();
-		button = new ImageIcon(getClass().getResource("images/catBttn.png"));
-		meowButton = new JButton(button);
-		
+		button = new ImageIcon(getClass().getResource("images/catBttn3.png"));
+		url = getClass().getResource("Sounds/meow.mp3");    
+		meow = Applet.newAudioClip(url);
 		
 		
 		setupPanel();
@@ -68,10 +73,11 @@ public class ChatPanel extends JPanel
 		this.add(checkerButton);
 		this.add(infoLabel);
 		this.add(chatScrollPane);
-		this.add(meowButton);
 		
 		chatArea.setEnabled(false);
 		chatArea.setEditable(false);
+		meowButton = new JButton(button);
+		add(meowButton);
 		
 	}
 	
@@ -106,7 +112,7 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				
+				meow.play();
 			}
 			
 		});
@@ -127,7 +133,8 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.NORTH, checkerButton, 6, SpringLayout.SOUTH, chatScrollPane);
 		appLayout.putConstraint(SpringLayout.EAST, checkerButton, 0, SpringLayout.EAST, chatButton);
 		appLayout.putConstraint(SpringLayout.NORTH, meowButton, 0, SpringLayout.NORTH, checkerButton);
-		appLayout.putConstraint(SpringLayout.WEST, meowButton, 0, SpringLayout.WEST, inputField);
+		appLayout.putConstraint(SpringLayout.WEST, meowButton, 24, SpringLayout.WEST, this);
+		
 	}
 	
 	// Oh sorry I'm late. I setup the scroll pane. I am currently new and I didn't arrive with everybody else. I'm sorry. I make it so this chatArea becomes a viewport and has scrollableness.
