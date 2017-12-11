@@ -119,7 +119,6 @@ public class ChatPanel extends JPanel
 				{
 				meow.play();
 				
-				wait(3);
 				}
 			}
 			
