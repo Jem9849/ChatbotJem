@@ -34,7 +34,7 @@ public class ChatPanel extends JPanel
 	private JScrollPane chatScrollPane;
 	private JButton meowButton;
 	private ImageIcon button;
-	private URL url;
+	private URL url; 
 	private AudioClip meow;
 	
 	// Let's also thank our construction crew. They've been tasked by our data members to help out. Isn't that "super"? Let's also call our setupPanel, setupLayout, and setupListeners to the stage. 
@@ -52,8 +52,10 @@ public class ChatPanel extends JPanel
 		infoLabel.setForeground(Color.WHITE);
 		chatScrollPane = new JScrollPane();
 		button = new ImageIcon(getClass().getResource("images/catBttn3.png"));
-		url = getClass().getResource("Sounds/meow.mp3");    
+		meowButton = new JButton(button);
+		url = getClass().getResource("sounds/meow.mp3");    
 		meow = Applet.newAudioClip(url);
+		
 		
 		
 		setupPanel();
@@ -73,12 +75,10 @@ public class ChatPanel extends JPanel
 		this.add(checkerButton);
 		this.add(infoLabel);
 		this.add(chatScrollPane);
+		this.add(meowButton);
 		
 		chatArea.setEnabled(false);
 		chatArea.setEditable(false);
-		meowButton = new JButton(button);
-		add(meowButton);
-		
 	}
 	
 	// Hello everyone. My name is setupListeners. What I basically do is set up events and actions. I somewhat give functionality. I don't actually do the functionality myself a lot however. 
@@ -110,9 +110,17 @@ public class ChatPanel extends JPanel
 		
 		meowButton.addActionListener(new ActionListener() 
 		{
+			private int check = 0;
 			public void actionPerformed(ActionEvent click)
 			{
+				check = 1;
+				
+				if (check == 1)
+				{
 				meow.play();
+				
+				wait(3);
+				}
 			}
 			
 		});
