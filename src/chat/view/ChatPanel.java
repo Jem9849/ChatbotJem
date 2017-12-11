@@ -11,6 +11,7 @@ import chat.controller.ChatbotController;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
+import javax.swing.ImageIcon;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener; 
@@ -29,6 +30,7 @@ public class ChatPanel extends JPanel
 	private JLabel infoLabel;
 	private JScrollPane chatScrollPane;
 	private JButton meowButton;
+	private ImageIcon button;
 	
 	// Let's also thank our construction crew. They've been tasked by our data members to help out. Isn't that "super"? Let's also call our setupPanel, setupLayout, and setupListeners to the stage. 
 	public ChatPanel(ChatbotController appController)
@@ -44,7 +46,9 @@ public class ChatPanel extends JPanel
 		checkerButton = new JButton("Check Your Privledge");
 		infoLabel.setForeground(Color.WHITE);
 		chatScrollPane = new JScrollPane();
-		meowButton = new JButton();
+		button = new ImageIcon(getClass().getResource("images/catBttn.png"));
+		meowButton = new JButton(button);
+		
 		
 		
 		setupPanel();
@@ -64,6 +68,7 @@ public class ChatPanel extends JPanel
 		this.add(checkerButton);
 		this.add(infoLabel);
 		this.add(chatScrollPane);
+		this.add(meowButton);
 		
 		chatArea.setEnabled(false);
 		chatArea.setEditable(false);
@@ -96,6 +101,15 @@ public class ChatPanel extends JPanel
 				inputField.setText("");
 			}
 		});
+		
+		meowButton.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+			}
+			
+		});
 	}
 	
 	// Hey everyone, I do a pretty important job. I setup the layout and add in the position of things. Although, sometimes I misplace where I put all my positions, and need to go find them.
@@ -112,6 +126,8 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.SOUTH, infoLabel, -6, SpringLayout.NORTH, inputField);
 		appLayout.putConstraint(SpringLayout.NORTH, checkerButton, 6, SpringLayout.SOUTH, chatScrollPane);
 		appLayout.putConstraint(SpringLayout.EAST, checkerButton, 0, SpringLayout.EAST, chatButton);
+		appLayout.putConstraint(SpringLayout.NORTH, meowButton, 0, SpringLayout.NORTH, checkerButton);
+		appLayout.putConstraint(SpringLayout.WEST, meowButton, 0, SpringLayout.WEST, inputField);
 	}
 	
 	// Oh sorry I'm late. I setup the scroll pane. I am currently new and I didn't arrive with everybody else. I'm sorry. I make it so this chatArea becomes a viewport and has scrollableness.
