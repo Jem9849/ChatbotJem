@@ -19,11 +19,20 @@ import java.net.URL;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener; 
 
-// Welcome to ChatPanel, where everything is nearly entirely boring. Here we extend our hands towards JPanel. Give a clap for JPanel. He brought a few stuff for us, isn't that sweet?
+																									// Welcome to ChatPanel, where everything is nearly entirely boring. Here we extend our hands towards JPanel. Give a clap for JPanel. He brought a few stuff for us, isn't that sweet?
+
+/**
+ * This is the Jpanel. It basically has many of the functions and windows. 
+ * 
+ * @author Jeremy
+ */
 public class ChatPanel extends JPanel
 {
 	
-	// Let's also honor those who have set up this ChatPanel. Let's clap our hands together for the data members. 
+																												// Let's also honor those who have set up this ChatPanel. Let's clap our hands together for the data members. 
+	/**
+	 * These are the many data members. Many of them are Jcomponents. 
+	 */
 	private ChatbotController appController;
 	private JButton chatButton;
 	private SpringLayout appLayout;
@@ -37,7 +46,12 @@ public class ChatPanel extends JPanel
 	private URL url; 
 	private AudioClip meow;
 	
-	// Let's also thank our construction crew. They've been tasked by our data members to help out. Isn't that "super"? Let's also call our setupPanel, setupLayout, and setupListeners to the stage. 
+																															// Let's also thank our construction crew. They've been tasked by our data members to help out. Isn't that "super"? Let's also call our setupPanel, setupLayout, and setupListeners to the stage. 
+	
+	/**
+	 * This basically sets up all the values, and sort of initializes them.
+	 * @param appController
+	 */
 	public ChatPanel(ChatbotController appController)
 	{
 		super();
@@ -64,8 +78,12 @@ public class ChatPanel extends JPanel
 		setupScrollPane();
 	}
 	
-	// Hi I'm the setupPanel, I thank you for the honor of being here today to speak. I help out setup the panel, like changing background color, or adding buttons and input fields. I don't really add 
-	// functionality though. That is my friend, setupListeners. Speaking of him...
+																																			// Hi I'm the setupPanel, I thank you for the honor of being here today to speak. I help out setup the panel, like changing background color, or adding buttons and input fields. I don't really add 
+																																			// functionality though. That is my friend, setupListeners. Speaking of him...
+	
+	/**
+	 *  This is the setupPanel where we basically add all the components. We also make the chatArea unusable by users.
+	 */
 	private void setupPanel()
 	{
 		this.setBackground(Color.BLUE);
@@ -81,8 +99,12 @@ public class ChatPanel extends JPanel
 		chatArea.setEditable(false);
 	}
 	
-	// Hello everyone. My name is setupListeners. What I basically do is set up events and actions. I somewhat give functionality. I don't actually do the functionality myself a lot however. 
-	// I like to connect events to actions instead. 
+																																			// Hello everyone. My name is setupListeners. What I basically do is set up events and actions. I somewhat give functionality. I don't actually do the functionality myself a lot however. 
+																																			// I like to connect events to actions instead. 
+	
+	/**
+	 * This is the setupListeners which basically is like waiting for a event and performing an action. 
+	 */
 	private void setupListeners()
 	{
 		chatButton.addActionListener(new ActionListener() 
@@ -125,7 +147,10 @@ public class ChatPanel extends JPanel
 		});
 	}
 	
-	// Hey everyone, I do a pretty important job. I setup the layout and add in the position of things. Although, sometimes I misplace where I put all my positions, and need to go find them.
+																																			// Hey everyone, I do a pretty important job. I setup the layout and add in the position of things. Although, sometimes I misplace where I put all my positions, and need to go find them.
+	/**
+	 * This is the setupLayout which basically is carrying junk code from messing with windowbuilder. 
+	 */
 	private void setupLayout()
 	{
 		appLayout.putConstraint(SpringLayout.NORTH, chatScrollPane, 20, SpringLayout.NORTH, this);
@@ -144,7 +169,11 @@ public class ChatPanel extends JPanel
 		
 	}
 	
-	// Oh sorry I'm late. I setup the scroll pane. I am currently new and I didn't arrive with everybody else. I'm sorry. I make it so this chatArea becomes a viewport and has scrollableness.
+																																					// Oh sorry I'm late. I setup the scroll pane. I am currently new and I didn't arrive with everybody else. I'm sorry. I make it so this chatArea becomes a viewport and has scrollableness.
+	
+	/**
+	 * This adds in scrollability for the chatArea box. 
+	 */
 	private void setupScrollPane()
 	{
 		chatScrollPane.setViewportView(chatArea);
