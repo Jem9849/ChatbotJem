@@ -22,7 +22,7 @@ public class Chatbot
 	public Chatbot(String username)
 	{
 		this.movieList = new ArrayList<Movie>(5);
-		this.shoppingList = new ArrayList<String>(10);
+		this.shoppingList = new ArrayList<String>(17);
 		this.cuteAnimalMemes = new ArrayList<String>(5);
 		this.currentTime = LocalTime.now();
 		this.questions = new String [10];
@@ -77,7 +77,13 @@ public class Chatbot
 		shoppingList.add("drinks(drinks)");
 		shoppingList.add("TOMOTTOES(veggies)");
 		shoppingList.add("A fistful of knowledge(ew)");
-		shoppingList.add("Chocolatedrunks(snacks)");
+		shoppingList.add("eggs");
+		shoppingList.add("hot peppers");
+		shoppingList.add("onions");
+		shoppingList.add("bagel");
+		shoppingList.add("crunchy peanut butter");
+		shoppingList.add("hot sauce");
+		shoppingList.add("juice");
 	}
 	
 	private void buildCuteAnimals()
