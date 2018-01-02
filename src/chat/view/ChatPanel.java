@@ -7,7 +7,6 @@ import javax.swing.JButton;
 import javax.swing.SpringLayout;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
-import chat.controller.ChatbotController;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
