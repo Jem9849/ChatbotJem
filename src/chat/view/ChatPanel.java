@@ -1,16 +1,8 @@
 package chat.view;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 import chat.controller.ChatbotController;
 import java.awt.Color;
-import javax.swing.JButton;
-import javax.swing.SpringLayout;
-import javax.swing.JTextField;
-import javax.swing.JTextArea;
-import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.ImageIcon;
 import java.applet.Applet;
 import java.applet.AudioClip;
 import java.net.URL;
@@ -34,6 +26,10 @@ public class ChatPanel extends JPanel
 	 */
 	private ChatbotController appController;
 	private JButton chatButton;
+	private JButton searchButton;
+	private JButton saveButton;
+	private JButton loadButton;
+	private JButton tweetButton;
 	private SpringLayout appLayout;
 	private JTextField inputField;
 	private JTextArea chatArea;
@@ -56,7 +52,11 @@ public class ChatPanel extends JPanel
 		super();
 		this.appController = appController;
 		
-		chatButton = new JButton("Meow");
+		chatButton = new JButton("Meow", new ImageIcon(getClass().getResource("/chat/view/images/ChatBot.png")));
+		searchButton = new JButton("Search", new ImageIcon(getClass().getResource("/chat/view/images/GodCat.png")));
+		loadButton = new JButton("Load", new ImageIcon(getClass().getResource("/chat/view/images/GodCat.png")));
+		saveButton = new JButton("Save", new ImageIcon(getClass().getResource("/chat/view/images/GodCat.png")));
+		tweetButton = new JButton("Tweet", new ImageIcon(getClass().getResource("/chat/view/images/GodCat.png")));
 		appLayout = new SpringLayout();
 		chatArea = new JTextArea(10,25);
 		inputField = new JTextField(20);
@@ -93,6 +93,10 @@ public class ChatPanel extends JPanel
 		this.add(infoLabel);
 		this.add(chatScrollPane);
 		this.add(meowButton);
+		this.add(searchButton);
+		this.add(tweetButton);
+		this.add(loadButton);
+		this.add(saveButton);
 		
 		chatArea.setEnabled(false);
 		chatArea.setEditable(false);
