@@ -52,20 +52,32 @@ public class ChatPanel extends JPanel
 		super();
 		this.appController = appController;
 		
-		chatButton = new JButton("Meow", new ImageIcon(getClass().getResource("/chat/view/images/ChatBot.png")));
+		chatButton = new JButton("Meow", new ImageIcon(getClass().getResource("/chat/view/images/GodCat.png")));
 		searchButton = new JButton("Search", new ImageIcon(getClass().getResource("/chat/view/images/GodCat.png")));
 		loadButton = new JButton("Load", new ImageIcon(getClass().getResource("/chat/view/images/GodCat.png")));
 		saveButton = new JButton("Save", new ImageIcon(getClass().getResource("/chat/view/images/GodCat.png")));
 		tweetButton = new JButton("Tweet", new ImageIcon(getClass().getResource("/chat/view/images/GodCat.png")));
 		appLayout = new SpringLayout();
-		chatArea = new JTextArea(10,25);
+		appLayout.putConstraint(SpringLayout.WEST, tweetButton, 43, SpringLayout.EAST, chatButton);
+		appLayout.putConstraint(SpringLayout.SOUTH, tweetButton, 0, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, tweetButton, -10, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, searchButton, 0, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.NORTH, chatButton, 0, SpringLayout.NORTH, searchButton);
+		appLayout.putConstraint(SpringLayout.WEST, chatButton, 40, SpringLayout.EAST, searchButton);
+		appLayout.putConstraint(SpringLayout.WEST, searchButton, 10, SpringLayout.WEST, this);
+		chatArea = new JTextArea(7, 25);
 		inputField = new JTextField(20);
 		infoLabel = new JLabel("Type something up, and then click Meow to speak to me.");
+		appLayout.putConstraint(SpringLayout.NORTH, inputField, 6, SpringLayout.SOUTH, infoLabel);
+		appLayout.putConstraint(SpringLayout.WEST, inputField, 0, SpringLayout.WEST, infoLabel);
+		appLayout.putConstraint(SpringLayout.WEST, infoLabel, 25, SpringLayout.WEST, this);
 		checkerButton = new JButton("Check Your Privledge");
+		appLayout.putConstraint(SpringLayout.NORTH, checkerButton, 15, SpringLayout.SOUTH, infoLabel);
 		infoLabel.setForeground(Color.WHITE);
 		chatScrollPane = new JScrollPane();
+		appLayout.putConstraint(SpringLayout.NORTH, infoLabel, 6, SpringLayout.SOUTH, chatScrollPane);
+		appLayout.putConstraint(SpringLayout.EAST, checkerButton, 0, SpringLayout.EAST, chatScrollPane);
 		button = new ImageIcon(getClass().getResource("images/catBttn3.png"));
-		meowButton = new JButton(button);
 		url = getClass().getResource("sounds/meow.mp3");    
 		meow = Applet.newAudioClip(url);
 		
@@ -92,7 +104,6 @@ public class ChatPanel extends JPanel
 		this.add(checkerButton);
 		this.add(infoLabel);
 		this.add(chatScrollPane);
-		this.add(meowButton);
 		this.add(searchButton);
 		this.add(tweetButton);
 		this.add(loadButton);
@@ -100,6 +111,10 @@ public class ChatPanel extends JPanel
 		
 		chatArea.setEnabled(false);
 		chatArea.setEditable(false);
+		meowButton = new JButton(button);
+		add(meowButton);
+		appLayout.putConstraint(SpringLayout.NORTH, meowButton, 6, SpringLayout.SOUTH, chatScrollPane);
+		appLayout.putConstraint(SpringLayout.EAST, meowButton, 0, SpringLayout.EAST, checkerButton);
 	}
 	
 																																			// Hello everyone. My name is setupListeners. What I basically do is set up events and actions. I somewhat give functionality. I don't actually do the functionality myself a lot however. 
@@ -159,16 +174,6 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.NORTH, chatScrollPane, 20, SpringLayout.NORTH, this);
 		appLayout.putConstraint(SpringLayout.WEST, chatScrollPane, 25, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.EAST, chatScrollPane, -25, SpringLayout.EAST, this);
-		appLayout.putConstraint(SpringLayout.SOUTH, chatButton, -23, SpringLayout.SOUTH, this);
-		appLayout.putConstraint(SpringLayout.NORTH, inputField, 0, SpringLayout.NORTH, chatButton);
-		appLayout.putConstraint(SpringLayout.WEST, inputField, 0, SpringLayout.WEST, chatScrollPane);
-		appLayout.putConstraint(SpringLayout.EAST, chatButton, 0, SpringLayout.EAST, chatScrollPane);
-		appLayout.putConstraint(SpringLayout.WEST, infoLabel, 0, SpringLayout.WEST, inputField);
-		appLayout.putConstraint(SpringLayout.SOUTH, infoLabel, -6, SpringLayout.NORTH, inputField);
-		appLayout.putConstraint(SpringLayout.NORTH, checkerButton, 6, SpringLayout.SOUTH, chatScrollPane);
-		appLayout.putConstraint(SpringLayout.EAST, checkerButton, 0, SpringLayout.EAST, chatButton);
-		appLayout.putConstraint(SpringLayout.NORTH, meowButton, 0, SpringLayout.NORTH, checkerButton);
-		appLayout.putConstraint(SpringLayout.WEST, meowButton, 24, SpringLayout.WEST, this);
 		
 	}
 	
