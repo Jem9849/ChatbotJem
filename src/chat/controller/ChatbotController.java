@@ -22,6 +22,8 @@ public class ChatbotController
 	 {
 		 chatbot = new Chatbot("MURRRR");
 		 myTwitter = new CTECTwitter(this);
+		 
+		 
 		 display = new PopupDisplay();
 		 appFrame = new ChatFrame(this);
 	 }
