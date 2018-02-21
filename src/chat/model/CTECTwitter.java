@@ -20,6 +20,19 @@ public class CTECTwitter
 	
 	public void sendTweet(String textToTweet)
 	{
+		try
+		{
+			chatbotTwitter.updateStatus(textToTweet + " @ChatbotCTEC");
+		}
 		
+		catch(TwitterException tweetError)
+		{
+			appController.handleError(tweetError);
+		}
+		
+		catch(Exception otherError)
+		{
+			appController.handleError(otherError);
+		}
 	}
 }
