@@ -166,7 +166,7 @@ public class ChatPanel extends JPanel
 		
 		searchButton.addActionListener(new ActionListener()
 		{
-			public void actonPerformed(ActionEvent click)
+			public void actionPerformed(ActionEvent click)
 			{
 						
 			}
@@ -174,7 +174,7 @@ public class ChatPanel extends JPanel
 		
 		saveButton.addActionListener(new ActionListener()
 		{
-			public void actonPerformed(ActionEvent click)
+			public void actionPerformed(ActionEvent click)
 			{
 						
 			}
@@ -182,7 +182,7 @@ public class ChatPanel extends JPanel
 		
 		loadButton.addActionListener(new ActionListener()
 		{
-			public void actonPerformed(ActionEvent click)
+			public void actionPerformed(ActionEvent click)
 			{
 						
 			}
@@ -190,7 +190,7 @@ public class ChatPanel extends JPanel
 		
 		tweetButton.addActionListener(new ActionListener()
 		{
-			public void actonPerformed(ActionEvent click)
+			public void actionPerformed(ActionEvent click)
 			{
 				appController.tweet(inputField.getText());
 			}
