@@ -129,4 +129,9 @@ public class ChatbotController
 		return appFrame;
 	}
 	
+	public void tweet(String text)
+	{
+		myTwitter.sendTweet(text);
+	}
+	
 }

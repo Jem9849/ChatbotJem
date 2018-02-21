@@ -163,6 +163,38 @@ public class ChatPanel extends JPanel
 			}
 			
 		});
+		
+		searchButton.addActionListener(new ActionListener()
+		{
+			public void actonPerformed(ActionEvent click)
+			{
+						
+			}
+		});
+		
+		saveButton.addActionListener(new ActionListener()
+		{
+			public void actonPerformed(ActionEvent click)
+			{
+						
+			}
+		});
+		
+		loadButton.addActionListener(new ActionListener()
+		{
+			public void actonPerformed(ActionEvent click)
+			{
+						
+			}
+		});
+		
+		tweetButton.addActionListener(new ActionListener()
+		{
+			public void actonPerformed(ActionEvent click)
+			{
+				appController.tweet(inputField.getText());
+			}
+		});
 	}
 	
 																																			// Hey everyone, I do a pretty important job. I setup the layout and add in the position of things. Although, sometimes I misplace where I put all my positions, and need to go find them.
