@@ -33,7 +33,7 @@ public class IOController
 		}
 		catch (IOException error)
 		{
-			app.handleErrors(error);
+			app.handleError(error);
 		}
 		return results;
 	}
