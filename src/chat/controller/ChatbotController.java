@@ -42,6 +42,9 @@ public class ChatbotController
 		}
 	*/
 		
+		String results = IOController.loadFromFile(this, "commonWords.txt");
+		IOController.saveToFile(this, results, "");
+		
 	}
 	
 	public String interactWithChatbot(String input)
