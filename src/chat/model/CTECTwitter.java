@@ -96,7 +96,7 @@ public class CTECTwitter
 		for (Status currentStatus : searchedTweets)
 		{
 			String tweetText = currentStatus.getText();
-			String [] tweetWords = tweetText.split("");
+			String [] tweetWords = tweetText.split(" ");
 			for (int index = 0; index < tweetWords.length; index++)
 			{
 				tweetedWords.add(removePunctuation(tweetWords[index]).trim());
@@ -119,8 +119,8 @@ public class CTECTwitter
 		return scrubbedString;
 	}
 	
-	private String createIgnoredWordArray()
-	{
-		
-	}
+//	private String createIgnoredWordArray()
+//	{
+//		
+//	}
 }
