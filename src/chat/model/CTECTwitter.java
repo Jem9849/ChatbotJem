@@ -142,7 +142,7 @@ public class CTECTwitter
 		// Uses the inputstream class.
 		// Notice the lack of try/catch.
 		
-		wordScanner = new Scanner(this.getClass().getResourceAsStream("commonWords.txt")); // "data/commonWords.txt"
+		wordScanner = new Scanner(this.getClass().getResourceAsStream("data/commonWords.txt")); // "data/commonWords.txt"
 		for (int i = 0; i < boringWords.length; i ++)
 		{
 			boringWords[i] = wordScanner.nextLine();
