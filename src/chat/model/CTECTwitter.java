@@ -48,4 +48,14 @@ public class CTECTwitter
 			appController.handleError(otherError);
 		}
 	}
+	
+	
+	public String getMostCommonWord(String username)
+	{
+		String mostCommon = "";
+		
+		collectTweets(username);
+		
+		return mostCommon;
+	}
 }
