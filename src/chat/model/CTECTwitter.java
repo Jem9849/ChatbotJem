@@ -56,6 +56,7 @@ public class CTECTwitter
 		
 		collectTweets(username);
 		turnStatusesToWords();
+		totalWordCount = tweetedWords.size();
 		
 		return mostCommon;
 	}
