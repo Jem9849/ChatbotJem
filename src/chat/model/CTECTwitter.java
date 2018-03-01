@@ -75,7 +75,7 @@ public class CTECTwitter
 				ResponseList<Status> listedTweets = chatbotTwitter.getUserTimeline(username, statusPage);
 				for (Status current : listedTweets)
 				{
-					if (current.getId() < lastId)
+					if (current.getId() < lastID)
 					{
 						searchedTweets.add(current);
 						lastID = current.getId();
