@@ -151,4 +151,9 @@ public class CTECTwitter
 		wordScanner.close();
 		return boringWords;
 	}
+	
+	private void trimTheBoringWords(String [] boringWords)
+	{
+		
+	}
 }
