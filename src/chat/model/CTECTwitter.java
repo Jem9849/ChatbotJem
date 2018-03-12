@@ -11,6 +11,7 @@ import twitter4j.*;
 
 import java.util.Scanner;
 import java.util.List;
+import java.util.Map;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.text.DecimalFormat;
@@ -63,6 +64,18 @@ public class CTECTwitter
 		totalWordCount = tweetedWords.size();
 		String [] boring = createIgnoredWordArray();
 		trimTheBoringWords(boring);
+		
+		ArrayList<Map.Entry<String, Integer>> sorted = sortHashMap();
+		
+		String mostCommonWord = sorted.get(0).getKey();
+		int maxWord = 0;
+		
+		maxWord = sorted.get(0).getValue();
+		
+		mostCommon = "The most common word " + username + "'s " + searchedTweets.size() + " tweets is " + mostCommonWord
+				+ ", and it was used " + maxWord + " times. \nThis is " + (DecimalFormat.getPercentInstance().format(((double) maxWord)
+						/totalWordCount)) + (DecimalFormat.getPercentInstance().format(((double) maxWord)/wordsAndCount.size())) + 
+				" of the unique words: " + wordsAndCount.size();
 		
 		return mostCommon;
 	}
