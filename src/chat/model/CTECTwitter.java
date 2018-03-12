@@ -211,4 +211,12 @@ public class CTECTwitter
 			}
 		}
 	}
+	
+	private ArrayList<Map.Entry<String, Integer>> sortHashMap()
+	{
+		ArrayList<Map.Entry<String, Integer>> entries = new ArrayList<Map.Entry<String, Integer>>(wordsAndCount.entrySet());
+		entries.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
+		
+		return entries;
+	}
 }
