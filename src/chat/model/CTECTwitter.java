@@ -269,18 +269,19 @@ public class CTECTwitter
 		Query twitterQuery = new Query(topic);
 		int resultMax = 750;
 		long lastId = Long.MAX_VALUE;
-		twitterQuery.setGeoCode(new GeoLocation(latitude, longitude), radius, Query.MEASUREMENT);
+		twitterQuery.setGeoCode(new GeoLocation(51.509865, -0.118092), 2000, Query.KILOMETERS);
 		ArrayList<Status> matchingTweets = new ArrayList<Status>();
 		while (searchedTweets.size() < resultMax)
 		{
 			try
 			{
 				QueryResult resultingTweets = chatbotTwitter.search(twitterQuery);
+				//for ()
 			}
 			
 			catch (TwitterException error)
 			{
-				appController.handleErrors(error);
+				appController.handleError(error);
 			}
 			
 			twitterQuery.setMaxId(lastId - 1);
