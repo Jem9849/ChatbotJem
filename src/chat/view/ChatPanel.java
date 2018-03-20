@@ -2,6 +2,7 @@ package chat.view;
 
 import javax.swing.*;
 import chat.controller.ChatbotController;
+import chat.controller.IOController;
 import java.awt.Color;
 import java.applet.Applet;
 import java.applet.AudioClip;
@@ -192,7 +193,7 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-						
+				IOController.saveToFile(appController, chatArea.getText(), "C://Users//Jeremy//Documents//Eclipse Coding//ChatbotJem");
 			}
 		});
 		
@@ -200,7 +201,12 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-						
+				String filename = inputField.getText();
+				String loadText = "";
+				
+				loadText = IOController.loadFromFile(appController, filename);
+				
+				chatArea.setText(loadText);
 			}
 		});
 		

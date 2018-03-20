@@ -270,13 +270,19 @@ public class CTECTwitter
 		int resultMax = 750;
 		long lastId = Long.MAX_VALUE;
 		twitterQuery.setGeoCode(new GeoLocation(51.509865, -0.118092), 2000, Query.KILOMETERS);
+		twitterQuery.setResultType(Query.RECENT);
 		ArrayList<Status> matchingTweets = new ArrayList<Status>();
 		while (searchedTweets.size() < resultMax)
 		{
 			try
 			{
 				QueryResult resultingTweets = chatbotTwitter.search(twitterQuery);
-				//for ()
+				
+				for (Status tweet : resultingTweets.getTweets())
+				{
+					matchingTweets.add(tweet);
+					lastId = tweet.getId();
+				}
 			}
 			
 			catch (TwitterException error)
