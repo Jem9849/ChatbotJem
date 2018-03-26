@@ -144,4 +144,9 @@ public class ChatbotController
 		return myTwitter.getMostCommonWord(text);
 	}
 	
+	public String find(String text)
+	{
+		return myTwitter.analyzeTwitterForTopic(text);
+	}
+	
 }
