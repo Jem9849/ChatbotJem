@@ -271,6 +271,7 @@ public class CTECTwitter
 		long lastId = Long.MAX_VALUE;
 		twitterQuery.setGeoCode(new GeoLocation(51.509865, -0.118092), 2000, Query.KILOMETERS);
 		twitterQuery.setResultType(Query.RECENT);
+		twitterQuery.setLang("en");
 		ArrayList<Status> matchingTweets = new ArrayList<Status>();
 		while (searchedTweets.size() < resultMax)
 		{
@@ -281,6 +282,8 @@ public class CTECTwitter
 				for (Status tweet : resultingTweets.getTweets())
 				{
 					matchingTweets.add(tweet);
+					searchedTweets.add(tweet);
+					
 					lastId = tweet.getId();
 				}
 			}
@@ -297,7 +300,7 @@ public class CTECTwitter
 		results += "Find a tweet that will pass one of the checkers in chatbot";
 		
 		int randomTweet = (int) (Math.random() * matchingTweets.size());
-		results += matchingTweets.get(randomTweet);
+		results += matchingTweets.get(randomTweet).getText();
 		
 		return results;
 	}
